@@ -18,9 +18,13 @@ class EjemploController extends Controller
         //Inserta los datos a la base de datos
         //DB::insert('insert into ejemplo (categoria, titulo, prueba) values(?, ?, ?);',['ninguno', 'titulo 1', 'prueba 1']);
 
-        $leer = DB::select('select * from ejemplo where id=?', [1]);
+        //Leer los datos de la base de datos
+        /*$leer = DB::select('select * from ejemplo where id=?', [1]);
+        return $leer;*/
 
-        return $leer;
+        //Actualizar el dato de la base de datos
+        $actualizar = DB::select('update ejemplo set titulo="Nuevo Titulo" where id=?', [1]);
+        return $actualizar;
     }
 
     /**
