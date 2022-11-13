@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEjemploTable extends Migration
+class AddPruebaColumnToEjemploTables extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateEjemploTable extends Migration
      */
     public function up()
     {
-        Schema::create('ejemplo', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('titulo');
-            $table->text('categoria');
-            $table->timestamps();
+        Schema::table('ejemplo', function (Blueprint $table) {
+            $table->string('prueba');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateEjemploTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ejemplo');
+        Schema::table('ejemplo', function (Blueprint $table) {
+            $table->dropColumn('prueba');
+        });
     }
 }
