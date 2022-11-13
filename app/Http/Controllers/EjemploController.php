@@ -15,7 +15,12 @@ class EjemploController extends Controller
     public function index()
     {
         //return view('modulos.contacto');
-        DB::insert('insert into ejemplo (categoria, titulo, prueba) values(?, ?, ?);',['ninguno', 'titulo 1', 'prueba 1']);
+        //Inserta los datos a la base de datos
+        //DB::insert('insert into ejemplo (categoria, titulo, prueba) values(?, ?, ?);',['ninguno', 'titulo 1', 'prueba 1']);
+
+        $leer = DB::select('select * from ejemplo where id=?', [1]);
+
+        return $leer;
     }
 
     /**
