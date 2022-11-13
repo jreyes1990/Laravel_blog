@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('welcome');
     //return "El usuario  con el ID: ".$id ." Nombre: ".$nombre;
-    return view('plantilla');
+    //return view('plantilla');
 });
 
 //Route::get('/ejemplo', 'EjemploController@index'); //Obsoleto
@@ -25,5 +26,5 @@ Route::resource('ejemplo', EjemploController::class); //Opcion 1
 //Route::resource('ejemplo', App\Http\Controllers\EjemploController::class); //Opcion 2
 
 //Route::resource('contacto', EjemploController::class); //Opcion 1
-Route::get('/contacto/{id}/{titulo}/{categoria}', [EjemploController::class, 'show']);
+//Route::get('/contacto/{id}/{titulo}/{categoria}', [EjemploController::class, 'show']);
  

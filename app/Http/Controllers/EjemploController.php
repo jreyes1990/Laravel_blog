@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB; //Importacion clase de BD
 
 class EjemploController extends Controller
 {
@@ -13,7 +14,8 @@ class EjemploController extends Controller
      */
     public function index()
     {
-        return view('modulos.contacto');
+        //return view('modulos.contacto');
+        DB::insert('insert into ejemplo (categoria, titulo, prueba) values(?, ?, ?);',['ninguno', 'titulo 1', 'prueba 1']);
     }
 
     /**
@@ -23,7 +25,7 @@ class EjemploController extends Controller
      */
     public function create()
     {
-        return "Estoy aprendiendo Laravel";
+        //return "Estoy aprendiendo Laravel";
     }
 
     /**
@@ -46,7 +48,7 @@ class EjemploController extends Controller
     public function show($id, $titulo, $categoria)
     {
         //return view('modulos.contacto')->with('id', $id); //Opcion 1
-        return view('modulos.contacto', compact('id', 'titulo', 'categoria'));
+        //return view('modulos.contacto', compact('id', 'titulo', 'categoria'));
     }
 
     /**
