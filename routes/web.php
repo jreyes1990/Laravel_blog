@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EjemploController;
+use App\Models\Ejemplo;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,18 @@ Route::resource('ejemplo', EjemploController::class); //Opcion 1
 
 //Route::resource('contacto', EjemploController::class); //Opcion 1
 //Route::get('/contacto/{id}/{titulo}/{categoria}', [EjemploController::class, 'show']);
+
+Route::get('/leer', function(){
+    $ejemplos = Ejemplo::where('id', 2)->take(1)->get();
+
+    return $ejemplos;
+
+    /*
+    $ejemplos = Ejemplo::all();
+
+    foreach($ejemplos as $ejemplo){
+        return $ejemplo->titulo;
+    }
+    */
+});
  

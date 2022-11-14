@@ -16,7 +16,7 @@ class EjemploController extends Controller
     {
         //return view('modulos.contacto');
         //Inserta los datos a la base de datos
-        //DB::insert('insert into ejemplo (categoria, titulo, prueba) values(?, ?, ?);',['ninguno', 'titulo 1', 'prueba 1']);
+        DB::insert('insert into ejemplo (categoria, titulo, prueba) values(?, ?, ?);',['ninguno', 'titulo 1', 'prueba 1']);
 
         //Leer los datos de la base de datos
         /*$leer = DB::select('select * from ejemplo where id=?', [1]);
@@ -27,8 +27,8 @@ class EjemploController extends Controller
         return $actualizar;*/
 
         //Elimina el datp de la base de datos
-        $eliminar = DB::delete('delete from ejemplo where id=?', [1]);
-        return $eliminar;
+        /*$eliminar = DB::delete('delete from ejemplo where id=?', [1]);
+        return $eliminar;*/
     }
 
     /**
