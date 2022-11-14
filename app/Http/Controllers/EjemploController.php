@@ -23,8 +23,12 @@ class EjemploController extends Controller
         return $leer;*/
 
         //Actualizar el dato de la base de datos
-        $actualizar = DB::select('update ejemplo set titulo="Nuevo Titulo" where id=?', [1]);
-        return $actualizar;
+        /*$actualizar = DB::update('update ejemplo set titulo="Nuevo Titulo" where id=?', [1]);
+        return $actualizar;*/
+
+        //Elimina el datp de la base de datos
+        $eliminar = DB::delete('delete from ejemplo where id=?', [1]);
+        return $eliminar;
     }
 
     /**
