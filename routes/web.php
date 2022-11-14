@@ -57,3 +57,7 @@ Route::get('/insertar', function(){
 Route::get('/crear', function(){
     Ejemplo::create(['titulo'=>'Noticia', 'prueba'=>'Prueba Noticia', 'categoria'=>'Prueba Categoria']);
 });
+
+Route::get('/actualizar', function(){
+    Ejemplo::where('id', 3)->update(['titulo'=>'Titulo Actualizado']);
+});
