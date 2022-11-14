@@ -61,3 +61,17 @@ Route::get('/crear', function(){
 Route::get('/actualizar', function(){
     Ejemplo::where('id', 3)->update(['titulo'=>'Titulo Actualizado']);
 });
+
+Route::get('/eliminar', function(){
+    $eliminar = Ejemplo::find(2);
+
+    $eliminar->delete();
+});
+
+Route::get('/eliminar2', function(){
+    Ejemplo::destroy(4);
+});
+
+Route::get('/eliminar3', function(){
+    Ejemplo::destroy(3, 6);
+});
