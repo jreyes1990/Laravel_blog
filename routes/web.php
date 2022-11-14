@@ -54,3 +54,6 @@ Route::get('/insertar', function(){
     $insertar->save();
 });
  
+Route::get('/crear', function(){
+    Ejemplo::create(['titulo'=>'Noticia', 'prueba'=>'Prueba Noticia', 'categoria'=>'Prueba Categoria']);
+});

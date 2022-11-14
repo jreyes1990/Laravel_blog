@@ -10,4 +10,10 @@ class Ejemplo extends Model
     use HasFactory;
 
     protected $table = 'ejemplo';
+
+    protected $fillable = [
+        'titulo',
+        'prueba',
+        'categoria'
+    ];
 }
