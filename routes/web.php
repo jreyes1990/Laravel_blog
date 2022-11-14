@@ -3,6 +3,7 @@
 use App\Http\Controllers\EjemploController;
 use App\Models\Ejemplo;
 use Illuminate\Support\Facades\Route;
+use PhpParser\Builder\Function_;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,5 +42,15 @@ Route::get('/leer', function(){
         return $ejemplo->titulo;
     }
     */
+});
+
+Route::get('/insertar', function(){
+    $insertar = new Ejemplo;
+
+    $insertar->titulo = 'Nuevo Titulo';
+    $insertar->prueba = 'Nueva Prueba';
+    $insertar->categoria = 'Nueva Categoria';
+
+    $insertar->save();
 });
  
