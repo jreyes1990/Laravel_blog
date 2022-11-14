@@ -75,3 +75,7 @@ Route::get('/eliminar2', function(){
 Route::get('/eliminar3', function(){
     Ejemplo::destroy(3, 6);
 });
+
+Route::get('/papelera', function(){
+    Ejemplo::find(5)->delete();
+});
