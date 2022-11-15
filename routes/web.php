@@ -5,6 +5,7 @@ use App\Models\Ejemplo;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Builder\Function_;
 
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -91,4 +92,8 @@ Route::get('/restaurar_papelera', function () {
 
 Route::get('/eliminar_papelera', function () {
   Ejemplo::withTrashed()->where('id', 5)->forceDelete();
+});
+
+Route::get('usuario/{id}/post', function($id){
+  return User::find($id)->ejemplo;
 });

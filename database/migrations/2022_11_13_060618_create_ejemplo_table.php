@@ -17,6 +17,7 @@ class CreateEjemploTable extends Migration
             $table->increments('id');
             $table->string('titulo');
             $table->text('categoria');
+            $table->integer('usuario_id')->unsigned();
             $table->timestamps();
         });
     }
