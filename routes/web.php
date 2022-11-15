@@ -88,3 +88,7 @@ Route::get('/leer_papelera', function () {
 Route::get('/restaurar_papelera', function () {
   Ejemplo::withTrashed()->where('id', 5)->restore();
 });
+
+Route::get('/eliminar_papelera', function () {
+  Ejemplo::withTrashed()->where('id', 5)->forceDelete();
+});
