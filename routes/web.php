@@ -84,3 +84,7 @@ Route::get('/leer_papelera', function () {
 
   return $leer;
 });
+
+Route::get('/restaurar_papelera', function () {
+  Ejemplo::withTrashed()->where('id', 5)->restore();
+});
