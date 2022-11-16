@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Ejemplo extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+    //use SoftDeletes;
 
     //protected $table = 'ejemplo';
     protected $table = 'tinker';
