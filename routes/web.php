@@ -109,3 +109,11 @@ Route::get('/ejemplo', function(){
     echo $post->titulo. "<br>";
   }
 });
+
+Route::get('/usuario/{id}/rol', function($id){
+  $usuario = User::find($id);
+
+  foreach($usuario->rols as $rol){
+    return $rol->nombre;
+  }
+});
