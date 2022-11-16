@@ -11,12 +11,20 @@ class Ejemplo extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $table = 'ejemplo';
+    //protected $table = 'ejemplo';
+    protected $table = 'tinker';
 
+    /*
     protected $fillable = [
         'titulo',
         'prueba',
         'categoria'
+    ];
+    */
+
+    protected $fillable = [
+        'nombre',
+        'contenido'
     ];
 
     protected $dates = ['deleted_at'];
