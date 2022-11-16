@@ -43,6 +43,7 @@ class User extends Authenticatable
     ];
 
     public function ejemplo(){
-        return $this->hasOne('App\Models\Ejemplo', 'usuario_id');
+        //return $this->hasOne('App\Models\Ejemplo', 'usuario_id');
+        return $this->hasMany('App\Models\Ejemplo', 'usuario_id');
     }
 }

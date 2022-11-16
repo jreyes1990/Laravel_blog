@@ -101,3 +101,11 @@ Route::get('/usuario/{id}/post', function($id){
 Route::get('/post/{id}/usuario', function($id){
   return Ejemplo::find($id)->user->name;
 });
+
+Route::get('/ejemplo', function(){
+  $usuario = User::find(1);
+
+  foreach($usuario->ejemplo as $post){
+    echo $post->titulo. "<br>";
+  }
+});
