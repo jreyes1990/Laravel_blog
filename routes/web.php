@@ -117,3 +117,7 @@ Route::get('/usuario/{id}/rol', function($id){
     return $rol->nombre;
   }
 });
+
+Route::get('/formulario', [EjemploController::class, 'index']);
+
+Route::post('/formulario', [EjemploController::class, 'store']);
