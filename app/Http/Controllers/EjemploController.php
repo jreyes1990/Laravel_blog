@@ -51,7 +51,7 @@ class EjemploController extends Controller
      */
     public function store(Request $request)
     {
-        $datos = request();
+        $datos = request()->validate(['nombre' => 'required | min:5']);
 
         DB::table('rols')->insert(['nombre' => $datos["nombre"]]);
 
