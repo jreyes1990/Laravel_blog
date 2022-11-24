@@ -51,7 +51,11 @@ class EjemploController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $datos = request();
+
+        DB::table('rols')->insert(['nombre' => $datos["nombre"]]);
+
+        return redirect('formulario');
     }
 
     /**
